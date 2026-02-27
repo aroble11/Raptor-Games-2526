@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Game Gallery</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 8px; }
+    p { margin-top: 0; color: #444; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 18px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 14px; }
+    .title { font-weight: 700; margin: 0 0 6px; }
+    .meta { color: #555; font-size: 14px; margin: 0 0 12px; }
+    a.button { display: inline-block; padding: 10px 12px; border-radius: 10px; border: 1px solid #111; text-decoration: none; }
+    a.button:hover { transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+  <h1>Student Game Gallery</h1>
+  <p>Tap a game to play.</p>
+
+  <div class="grid">
+    <div class="card">
+      <p class="title">Mariano – Raptors</p>
+      <p class="meta">Keyboard controls (for now)</p>
+      <a class="button" href="https://aroble11.github.io/raptors_mariano/">Play</a>
+    </div>
+
+    <div class="card">
+      <p class="title">David – [Game Name]</p>
+      <p class="meta">Add a short description</p>
+      <a class="button" href="https://aroble11.github.io/raptors_david/">Play</a>
+    </div>
+  </div>
+</body>
+</html>
