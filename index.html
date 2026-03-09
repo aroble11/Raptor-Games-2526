@@ -9,25 +9,81 @@
   <title>Student Game Gallery</title>
 
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
-    h1 { margin-bottom: 8px; }
-    p { margin-top: 0; color: #444; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
-    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 14px; }
-    .title { font-weight: 700; margin: 0 0 6px; }
-    .meta { color: #555; font-size: 14px; margin: 0 0 12px; }
-    a.button { display: inline-block; padding: 10px 12px; border-radius: 10px; border: 1px solid #111; text-decoration: none; }
-    a.button:hover { transform: translateY(-1px); }
-    .thumb { width: 100%;  border-radius: 10px;  margin-bottom: 10px; }
+   body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #dfe7ff, transparent 40%),
+              radial-gradient(circle at 80% 70%, #ffe6d9, transparent 40%),
+              #f6f4ef;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border: none;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 6px;
+}
+
+.meta {
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.button {
+  display: inline-block;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
   </style>
 
 </head>
 
 <body>
 
-  <h1>Student Game Gallery</h1>
-  <p>Tap a game to play.</p>
+  <h1 style="font-size: 48px;"><center>Student Game Gallery</center></h1>
+  <p><center>Click "Play" to begin</center></p>
 
   <div class="grid">
     <div class="card">
