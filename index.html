@@ -12,7 +12,7 @@
     body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
     h1 { margin-bottom: 8px; }
     p { margin-top: 0; color: #444; }
-    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
     @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
     .card { border: 1px solid #ddd; border-radius: 12px; padding: 14px; }
     .title { font-weight: 700; margin: 0 0 6px; }
@@ -49,6 +49,7 @@
       <p class="title">Aliyah - Godot 2D Game</p>
       <p class="meta">Use arrow keys to move</p>
       <a class="button" href="https://aroble11.github.io/raptors_aliyah/">Play</a>
+    </div>
 
     <div class="card">
       <img src="l_screenshot.png" alt="Raptors screenshot" class="thumb">
