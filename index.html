@@ -6,230 +6,69 @@
   <title>Raptor Student Game Gallery</title>
   <meta name="description" content="Play Godot games built by students in our high school Game Programming and Design class.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-
+  <link rel="preload" href="assets/fonts/orbitron.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
-  <header class="hero">
-    <span class="hero-eyebrow">// GAME PROGRAMMING AND DESIGN · 2025 – 2026</span>
-    <h1>RAPTOR <span class="accent">STUDENT</span> GAME GALLERY</h1>
-    <p class="subtitle">Play Godot games built by students in our high school Game Programming and Design class. Click a Play button to launch a game right in your browser.</p>
-    <nav class="hero-cta" aria-label="Jump to section">
-      <a href="#zombie-survivor">▾ ZOMBIE SURVIVOR</a>
-      <a href="#dodge-the-creeps">▾ DODGE THE CREEPS</a>
-    </nav>
+  <!-- To add or change games, edit games.js — not this file. -->
+  <script src="games.js" defer></script>
+  <script src="player.js" defer></script>
+  <script src="gallery.js" defer></script>
+  <script src="extras.js" defer></script>
+</head>
+<body class="select-page">
+
+  <header class="topbar">
+    <div class="brand">
+      <h1 class="logo"><a href="./" id="home-link">RAPTOR <span class="accent">STUDENT</span> GAME GALLERY</a></h1>
+      <span class="hero-eyebrow">// GAME PROGRAMMING AND DESIGN · 2025 – 2026</span>
+    </div>
   </header>
 
-  <main>
+  <main id="gallery">
+    <section class="stage is-intro" id="stage" aria-label="Featured game" hidden>
+      <a class="monitor" id="monitor" href="#">
+        <span class="screen">
+          <img class="screen-still" id="screen-still" alt="">
+          <video class="screen-video" id="screen-video" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <span class="live" id="live-tag" aria-hidden="true"><span class="live-game">LIVE PREVIEW</span><span class="live-demo">STUDENT DEMO REEL</span></span>
+          <span class="demo-caption" id="demo-caption" aria-hidden="true"></span>
+        </span>
+      </a>
 
-    <section class="game-section" id="zombie-survivor">
-      <h2><span class="slashes">//</span>ZOMBIE SURVIVOR</h2>
-      <p class="section-blurb">Use the WASD keys to move. Outlast the horde.</p>
-
-      <!-- COPY ONE OF THESE BLOCKS TO ADD A STUDENT (Zombie Survivor) -->
-      <div class="card-grid">
-
-        <article class="game-card" data-game="zombie-survivor">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/leo_game_2/" aria-label="Play Leo's zombie survivor game">
-            <img src="leo2_screenshot.png" alt="Screenshot of Leo's zombie survivor game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // LEO</p>
-            <p class="controls">Use WASD keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/leo_game_2/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="zombie-survivor">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/mariano_game_2/" aria-label="Play Mariano's zombie survivor game">
-            <img src="mariano2_screenshot.png" alt="Screenshot of Mariano's zombie survivor game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // MARIANO</p>
-            <p class="controls">Use WASD keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/mariano_game_2/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="zombie-survivor">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/aliyah_game_2/" aria-label="Play Aliyah's zombie survivor game">
-            <img src="aliyah2_screenshot.png" alt="Screenshot of Aliyah's zombie survivor game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // ALIYAH</p>
-            <p class="controls">Use WASD keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/aliyah_game_2/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="zombie-survivor">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/david_game_2/" aria-label="Play David's zombie survivor game">
-            <img src="david_screenshot.png" alt="Screenshot of David's zombie survivor game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // DAVID</p>
-            <p class="controls">Use WASD keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/david_game_2/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
+      <div class="info" id="info" aria-live="polite">
+        <div class="info-intro">
+          <p class="p1">STUDENT PROJECTS · 2025 – 2026</p>
+          <h2 class="name intro-title" id="intro-title">STUDENT GAMES</h2>
+          <p class="game-title">Made in Godot by our Game Programming and Design class</p>
+          <p class="intro-copy">Every game on this page was designed and coded by a high school student. Pick a student below to see their game on the screen, then press start to play it right in your browser. Nothing to download.</p>
+          <a class="start" id="intro-start" href="#roster"><span aria-hidden="true">▼</span> PICK A GAME</a>
+        </div>
+        <div class="info-game">
+        <p class="p1">PLAYER 1 SELECT</p>
+        <h2 class="name" id="sel-name"></h2>
+        <p class="game-title" id="sel-game"></p>
+        <div class="controls">
+          <span class="keys" id="sel-keys" aria-hidden="true"></span>
+          <span id="sel-blurb"></span>
+        </div>
+        <p class="kbd-warning">⌨ These games need a keyboard</p>
+        <a class="start start--coin" id="start" href="#"><span class="coin" aria-hidden="true"></span> INSERT COIN TO START <span class="kbd kbd--start" aria-hidden="true">ENTER</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="game-section" id="dodge-the-creeps">
-      <h2><span class="slashes">//</span>DODGE THE CREEPS</h2>
-      <p class="section-blurb">Use the arrow keys to move. Avoid the creeps for as long as you can.</p>
+    <section class="roster" id="roster" aria-label="All games"></section>
 
-      <!-- COPY ONE OF THESE BLOCKS TO ADD A STUDENT (Dodge the Creeps) -->
-      <div class="card-grid">
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/gael_game_1/" aria-label="Play Gael's game">
-            <img src="g_screenshot.png" alt="Screenshot of Gael's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // GAEL</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/gael_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/mariano_game_1/" aria-label="Play Mariano's game">
-            <img src="m_screenshot.png" alt="Screenshot of Mariano's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // MARIANO</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/mariano_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/david_game_1/" aria-label="Play David's game">
-            <img src="h_screenshot.png" alt="Screenshot of David's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // DAVID</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/david_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/aliyah_game_1/" aria-label="Play Aliyah's game">
-            <img src="a_screenshot.png" alt="Screenshot of Aliyah's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // ALIYAH</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/aliyah_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/leo_game_1/" aria-label="Play Leo's game">
-            <img src="l_screenshot.png" alt="Screenshot of Leo's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // LEO</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/leo_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/said_game_1/" aria-label="Play Said's game">
-            <img src="s_screenshot.png" alt="Screenshot of Said's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // SAID</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/said_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/luisa_game_1/" aria-label="Play Luisa's game">
-            <img src="luisa_screenshot.png" alt="Screenshot of Luisa's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // LUISA</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/luisa_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/edgar_game_1/" aria-label="Play Edgar's game">
-            <img src="edgar_screenshot.png" alt="Screenshot of Edgar's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // EDGAR</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/edgar_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/gerardo_game_1/" aria-label="Play Gerardo's game">
-            <img src="gerardo_screenshot.png" alt="Screenshot of Gerardo's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // GERARDO</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/gerardo_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/ian_game_1/" aria-label="Play Ian's game">
-            <img src="ian_screenshot.png" alt="Screenshot of Ian's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // IAN</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/ian_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-        <article class="game-card" data-game="dodge-the-creeps">
-          <a class="card-thumb" href="https://raptorstudentprojects.com/game-prog-2526/cisco_game_1/" aria-label="Play Cisco's game">
-            <img src="cisco_screenshot.png" alt="Screenshot of Cisco's game" loading="lazy">
-            <div class="thumb-overlay" aria-hidden="true"></div>
-          </a>
-          <div class="card-body">
-            <p class="student-name">STUDENT // CISCO</p>
-            <p class="controls">Use arrow keys to move</p>
-            <a class="play-btn" href="https://raptorstudentprojects.com/game-prog-2526/cisco_game_1/"><span class="arrow">▶</span> PLAY</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
+    <noscript>
+      <p class="gallery-error">This gallery and its games need JavaScript. Please turn it on to play.</p>
+    </noscript>
   </main>
 
   <footer class="site-footer">
+    <p>Play Godot games built by students in our high school Game Programming and Design class.</p>
     BUILT IN GODOT <span class="dot">·</span> GAME PROGRAMMING AND DESIGN <span class="dot">·</span> 2025 – 2026
+    <span class="footer-hint" aria-hidden="true">↑ ↑ ↓ ↓ ← → ← → B A</span>
   </footer>
 
 </body>

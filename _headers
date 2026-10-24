@@ -1,0 +1,42 @@
+# Netlify response headers — https://docs.netlify.com/routing/headers/
+#
+# Each header below is set by only ONE matching rule for any given page.
+# (Netlify doesn't document what happens when two rules set the same
+# header, so Content-Security-Policy and X-Frame-Options are only set on
+# the exact paths that need them, never on /*.)
+
+# ---- Every file ----
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=()
+
+# ---- Gallery pages: strict, nothing inline, nothing from other sites ----
+/
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+
+/index.html
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+
+/404.html
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+
+# ---- Godot game pages ----
+# Godot's exported page uses an inline <script>/<style> and compiles WebAssembly,
+# so it needs 'unsafe-inline' and 'wasm-unsafe-eval'. Still same-site only.
+# frame-ancestors 'self' lets the gallery embed games later; other sites can't.
+/game-prog-2526/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; worker-src 'self' blob:; connect-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'self'
+  X-Frame-Options: SAMEORIGIN
+
+# ---- Caching ----
+# Engine folders are named by Godot version and never change, so browsers
+# can keep them for a year (visitors download the 9 MB engine only once).
+/engine/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/fonts/*
+  Cache-Control: public, max-age=604800

@@ -1,0 +1,8 @@
+# Netlify redirects — https://docs.netlify.com/routing/redirects/
+# Keep these folders in the repo but off the website:
+#   tools/   maintenance scripts
+#   output/  design mock-ups and notes
+/tools      /404.html  404!
+/tools/*    /404.html  404!
+/output     /404.html  404!
+/output/*   /404.html  404!
