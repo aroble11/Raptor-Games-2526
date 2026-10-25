@@ -4,12 +4,12 @@
  * This is the only file you need to edit to add a game.
  *
  * To add a student, copy one line inside "games" and change it:
- *   { student: "Name", folder: "name_game_1", section: "dodge-the-creeps", screenshot: "name_screenshot.png" },
+ *   { student: "Name", folder: "name_game_1", section: "dodge-the-creeps", screenshot: "screenshots/name_game_1.png" },
  *
  *   student    – first name shown on the tile
  *   folder     – the game's folder inside game-prog-2526/
  *   section    – must match an "id" in "sections" below
- *   screenshot – image file in the site's main folder (used if there's no preview art)
+ *   screenshot – image in screenshots/, named after the folder (used if there's no preview art)
  *
  * Tiles appear in the same order as the lines below.
  *
@@ -45,22 +45,22 @@ window.RAPTOR_GALLERY = {
 
   games: [
     // ---- Zombie Survivor ----
-    { student: "Leo",     folder: "leo_game_2",     section: "zombie-survivor",  screenshot: "leo2_screenshot.png" },
-    { student: "Mariano", folder: "mariano_game_2", section: "zombie-survivor",  screenshot: "mariano2_screenshot.png" },
-    { student: "Aliyah",  folder: "aliyah_game_2",  section: "zombie-survivor",  screenshot: "aliyah2_screenshot.png" },
-    { student: "David",   folder: "david_game_2",   section: "zombie-survivor",  screenshot: "david_screenshot.png" },
+    { student: "Leo",     folder: "leo_game_2",     section: "zombie-survivor",  screenshot: "screenshots/leo_game_2.png" },
+    { student: "Mariano", folder: "mariano_game_2", section: "zombie-survivor",  screenshot: "screenshots/mariano_game_2.png" },
+    { student: "Aliyah",  folder: "aliyah_game_2",  section: "zombie-survivor",  screenshot: "screenshots/aliyah_game_2.png" },
+    { student: "David",   folder: "david_game_2",   section: "zombie-survivor",  screenshot: "screenshots/david_game_2.png" },
 
     // ---- Dodge the Creeps ----
-    { student: "Gael",    folder: "gael_game_1",    section: "dodge-the-creeps", screenshot: "g_screenshot.png" },
-    { student: "Mariano", folder: "mariano_game_1", section: "dodge-the-creeps", screenshot: "m_screenshot.png" },
-    { student: "David",   folder: "david_game_1",   section: "dodge-the-creeps", screenshot: "h_screenshot.png" },
-    { student: "Aliyah",  folder: "aliyah_game_1",  section: "dodge-the-creeps", screenshot: "a_screenshot.png" },
-    { student: "Leo",     folder: "leo_game_1",     section: "dodge-the-creeps", screenshot: "l_screenshot.png" },
-    { student: "Said",    folder: "said_game_1",    section: "dodge-the-creeps", screenshot: "s_screenshot.png" },
-    { student: "Luisa",   folder: "luisa_game_1",   section: "dodge-the-creeps", screenshot: "luisa_screenshot.png" },
-    { student: "Edgar",   folder: "edgar_game_1",   section: "dodge-the-creeps", screenshot: "edgar_screenshot.png" },
-    { student: "Gerardo", folder: "gerardo_game_1", section: "dodge-the-creeps", screenshot: "gerardo_screenshot.png" },
-    { student: "Ian",     folder: "ian_game_1",     section: "dodge-the-creeps", screenshot: "ian_screenshot.png" },
-    { student: "Cisco",   folder: "cisco_game_1",   section: "dodge-the-creeps", screenshot: "cisco_screenshot.png" },
+    { student: "Gael",    folder: "gael_game_1",    section: "dodge-the-creeps", screenshot: "screenshots/gael_game_1.png" },
+    { student: "Mariano", folder: "mariano_game_1", section: "dodge-the-creeps", screenshot: "screenshots/mariano_game_1.png" },
+    { student: "David",   folder: "david_game_1",   section: "dodge-the-creeps", screenshot: "screenshots/david_game_1.png" },
+    { student: "Aliyah",  folder: "aliyah_game_1",  section: "dodge-the-creeps", screenshot: "screenshots/aliyah_game_1.png" },
+    { student: "Leo",     folder: "leo_game_1",     section: "dodge-the-creeps", screenshot: "screenshots/leo_game_1.png" },
+    { student: "Said",    folder: "said_game_1",    section: "dodge-the-creeps", screenshot: "screenshots/said_game_1.png" },
+    { student: "Luisa",   folder: "luisa_game_1",   section: "dodge-the-creeps", screenshot: "screenshots/luisa_game_1.png" },
+    { student: "Edgar",   folder: "edgar_game_1",   section: "dodge-the-creeps", screenshot: "screenshots/edgar_game_1.png" },
+    { student: "Gerardo", folder: "gerardo_game_1", section: "dodge-the-creeps", screenshot: "screenshots/gerardo_game_1.png" },
+    { student: "Ian",     folder: "ian_game_1",     section: "dodge-the-creeps", screenshot: "screenshots/ian_game_1.png" },
+    { student: "Cisco",   folder: "cisco_game_1",   section: "dodge-the-creeps", screenshot: "screenshots/cisco_game_1.png" },
   ],
 };
